@@ -11,17 +11,6 @@
             margin: 0;
             padding: 0;
             color: #333;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><rect fill="%23f93" width="900" height="200"/><rect fill="%23fff" y="200" width="900" height="200"/><rect fill="%23128807" y="400" width="900" height="200"/><circle fill="%23008" cx="450" cy="300" r="64"/><circle fill="%23fff" cx="450" cy="300" r="56"/><circle fill="%23008" cx="450" cy="300" r="24"/><path fill="%23008" d="M450 205.85v188.3m-84.15-84.15h168.3"/></svg>');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-attachment: fixed;
-            background-size: cover;
-            background-color: rgba(255, 255, 255, 0.9);
-            background-blend-mode: overlay;
-        }
-        .tricolor {
-            height: 10px;
-            background: linear-gradient(to right, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%);
         }
         header {
             background-color: #0066cc;
@@ -50,8 +39,6 @@
             padding: 20px;
             max-width: 800px;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
         }
         .team-list {
             display: grid;
@@ -70,8 +57,14 @@
             border-radius: 50%;
             object-fit: cover;
         }
+        .record-card {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
         footer {
-            background-color: #333;
+            background-color:  #333;
             color: white;
             text-align: center;
             padding: 1rem;
@@ -80,11 +73,21 @@
     </style>
 </head>
 <body>
-    <div class="tricolor"></div>
     <header>
-        <h1>Indian Cricket Team</h1>
+        <h1>Indian Cricket Team - ODI Format</h1>
     </header>
     <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="t20.html">T20</a></li>
+            <li><a href="test.html">Test</a></li>
+            <li><a href="odi.html">ODI</a></li>
+            <li><a href="womenindex.html">W-Home</a></li>
+            <li><a href="woment20.html">W-T20</a></li>
+            <li><a href="womentest.html">W-Test</a></li>
+            <li><a href="womenodi.html">W-ODI</a></li>
+        </ul>
+    </nav>
     <main>
         <h2>One Day International (ODI) Cricket</h2>
         <img src="img/odi.jpg?height=300&width=500" alt="Indian ODI Team" style="max-width: 100%; height: auto;">
