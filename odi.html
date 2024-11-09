@@ -53,11 +53,22 @@
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
         }
-        .record-card {
+        .team-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .team-member {
             background-color: #f9f9f9;
+            padding: 10px;
             border-radius: 5px;
-            padding: 20px;
-            margin-top: 20px;
+            text-align: center;
+        }
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
         }
         footer {
             background-color: #333;
@@ -71,20 +82,9 @@
 <body>
     <div class="tricolor"></div>
     <header>
-        <h1>Indian Cricket Team - T20 Format</h1>
+        <h1>Indian Cricket Team</h1>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="t20.html">T20</a></li>
-            <li><a href="test.html">Test</a></li>
-            <li><a href="odi.html">ODI</a></li>
-            <li><a href="womenindex.html">W-Home</a></li>
-            <li><a href="woment20.html">W-T20</a></li>
-            <li><a href="womentest.html">W-Test</a></li>
-            <li><a href="womenodi.html">W-ODI</a></li>
-        </ul>
-    </nav>
     <main>
         <h2>One Day International (ODI) Cricket</h2>
         <img src="img/odi.jpg?height=300&width=500" alt="Indian ODI Team" style="max-width: 100%; height: auto;">
