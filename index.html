@@ -10,42 +10,50 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: #333;
-             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><rect fill="%23f93" width="900" height="200"/><rect fill="%23fff" y="200" width="900" height="200"/><rect fill="%23128807" y="400" width="900" height="200"/><circle fill="%23008" cx="450" cy="300" r="64"/><circle fill="%23fff" cx="450" cy="300" r="56"/><circle fill="%23008" cx="450" cy="300" r="24"/><path fill="%23008" d="M450 205.85v188.3m-84.15-84.15h168.3"/></svg>');
-            background-repeat: no-repeat;
-            background-position: center center;
+            color: #000;
+            background: linear-gradient(to bottom, rgba(255, 153, 51, 0.8) 33.33%, rgba(255, 255, 255, 0.8) 33.33%, rgba(255, 255, 255, 0.8) 66.66%, rgba(19, 136, 8, 0.8) 66.66%);
             background-attachment: fixed;
             background-size: cover;
-            background-color: rgba(255, 255, 255, 0.9);
-            background-blend-mode: overlay;
+            backdrop-filter: blur(10px);
         }
-        .tricolor {
-            height: 10px;
-            background: linear-gradient(to right, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%);
-        }
-        header {
-            background-color: #0066cc;
-            color: white;
+        header, footer {
+            background: linear-gradient(to bottom, rgba(255, 153, 51, 0.8), rgba(255, 255, 255, 0.8), rgba(19, 136, 8, 0.8));
+            color: #000;
             text-align: center;
             padding: 1rem;
+            box-shadow: 0px 10px 20px rgba(255, 153, 51, 0.6), 0px 10px 20px rgba(255, 255, 255, 0.6), 0px 10px 20px rgba(19, 136, 8, 0.6);
+            backdrop-filter: blur(5px);
         }
+
         nav {
-            background-color: #f4f4f4;
+            background-color: rgba(255, 255, 255, 0.7);
             padding: 0.5rem;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
             display: flex;
             justify-content: center;
         }
+
         nav ul li {
             margin: 0 10px;
         }
+
         nav ul li a {
             text-decoration: none;
-            color: #333;
+            color: #000;
+            font-weight: bold;
+            transition: all 0.3s ease;
         }
+
+        nav ul li a:hover {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
         main {
             padding: 20px;
             max-width: 800px;
@@ -58,29 +66,62 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 10px;
         }
+
         .team-member {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
+            background: linear-gradient(to bottom, rgba(255, 153, 51, 0.8) 33.33%, rgba(255, 255, 255, 0.8) 33.33%, rgba(255, 255, 255, 0.8) 66.66%, rgba(19, 136, 8, 0.8) 66.66%);
+            padding: 15px;
+            border-radius: 8px;
             text-align: center;
+            color: #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 153, 51, 0.4), 0 0 15px rgba(19, 136, 8, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            backdrop-filter: blur(8px);
         }
+
         .team-member img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid #fff;
+            cursor: pointer;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+
+        .team-member a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .team-member a:hover {
+            color: #0066cc;
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 153, 51, 0.5), 0 0 25px rgba(19, 136, 8, 0.5);
+        }
+        .team-member .label {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+        }
+        .team-member:hover .label {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div class="tricolor"></div>
     <header>
         <h1>Indian Cricket Team</h1>
     </header>
@@ -104,49 +145,71 @@
         <h3>Current Team Members</h3>
         <div class="team-list">
             <div class="team-member">
-                <img src="img/rohit.jpg?height=100&width=100" alt="Rohit Sharma">
-                <a href="https://en.wikipedia.org/wiki/Rohit_Sharma">Rohit Sharma (C)</a>
+                <a href="https://en.wikipedia.org/wiki/Rohit_Sharma">
+                    <img src="img/rohit.jpg?height=100&width=100" alt="Rohit Sharma">
+                    <div class="label">Rohit Sharma (C)</div>
+                </a>
             </div>
             <div class="team-member">
-                <img src="img/virat.jpg?height=100&width=100" alt="Virat Kohli">
-               <a href="https://en.wikipedia.org/wiki/Virat_Kohli">Virat Kohli</a>
+                <a href="https://en.wikipedia.org/wiki/Virat_Kohli">
+                    <img src="img/virat.jpg?height=100&width=100" alt="Virat Kohli">
+                    <div class="label">Virat Kohli</div>
+                </a>
             </div>
             <div class="team-member">
-                <img src="img/klrahul.jpg?height=100&width=100" alt="KL Rahul">
-                <a href="https://en.wikipedia.org/wiki/KL_Rahul">Kl Rahul</a>
+                <a href="https://en.wikipedia.org/wiki/KL_Rahul">
+                    <img src="img/klrahul.jpg?height=100&width=100" alt="KL Rahul">
+                    <div class="label">KL Rahul</div>
+                </a>
             </div>
             <div class="team-member">
-                <img src="img/surya.jpg?height=100&width=100" alt="Suryakumar Yadav">
-                <a href="https://en.wikipedia.org/wiki/Suryakumar_Yadav">Suryakumar Yadav</a>
+                <a href="https://en.wikipedia.org/wiki/Suryakumar_Yadav">
+                    <img src="img/surya.jpg?height=100&width=100" alt="Suryakumar Yadav">
+                    <div class="label">Suryakumar Yadav</div>
+                </a>
             </div>
             <div class="team-member">
-                <img src="img/hardik.jpg?height=100&width=100" alt="Hardik Pandya">
-                <a href="https://en.wikipedia.org/wiki/Hardik_Pandya">Hardik Pandya</a>
+                <a href="https://en.wikipedia.org/wiki/Hardik_Pandya">
+                    <img src="img/hardik.jpg?height=100&width=100" alt="Hardik Pandya">
+                    <div class="label">Hardik Pandya</div>
+                </a>
             </div>
             <div class="team-member">
+                <a href="https://en.wikipedia.org/wiki/Rishabh_Pant">
                 <img src="img/rishabh.jpg?height=100&width=100" alt="Rishabh Pant">
-                <a href="https://en.wikipedia.org/wiki/Rishabh_Pant">Rishabh Pant (WK)</a>
+                    <div class="label">Rishabh Pant</div>
+                </a>
             </div>
             <div class="team-member">
+                <a href="https://en.wikipedia.org/wiki/Ravindra_Jadeja">
                 <img src="img/jadeja.jpg?height=100&width=100" alt="Ravindra Jadeja">
-                <a href="https://en.wikipedia.org/wiki/Ravindra_Jadeja">Ravindra Jadeja</a>
+                <div class="label">Ravindra Jadeja</div>
+            </a>
             </div>
             <div class="team-member">
-                <img src="img/singh.jpg?height=100&width=100" alt="Arshdeep Singh">
-                <a href="https://en.wikipedia.org/wiki/Arshdeep_Singh_(cricketer)">Arshdeep Singh</a>
+                <a href="https://en.wikipedia.org/wiki/Arshdeep_Singh_(cricketer)">
+                    <img src="img/singh.jpg?height=100&width=100" alt="Arshdeep Singh">
+                    <div class="label">Arshdeep Singh</div>
+                </a>
             </div>
             <div class="team-member">
+                <a href="https://en.wikipedia.org/wiki/Jasprit_Bumrah">
                 <img src="img/bumrah.jpg?height=100&width=100" alt="Jasprit Bumrah">
-                <a href="https://en.wikipedia.org/wiki/Jasprit_Bumrah">Jasprit Bumrah</a>
+                <div class="label">Jasprit Bumrah</div>
+            </a>
             </div>
             <div class="team-member">
-                <img src="img/siraj.jpg?height=100&width=100" alt="Mohammed Siraj">
-                <a href="https://en.wikipedia.org/wiki/Mohammed_Siraj">Mohammed Siraj</a>
-            </div>
+            <a href="https://en.wikipedia.org/wiki/Mohammed_Siraj">  
+            <img src="img/siraj.jpg?height=100&width=100" alt="Mohammed Siraj">
+            <div class="label">Mohammed Siraj</div>
+        </a>    
+        </div>
             <div class="team-member">
+                <a href="https://en.wikipedia.org/wiki/Mohammed_Shami">
                 <img src="img/shami.jpg?height=100&width=100" alt="Mohammed Shami">
-                <a href="https://en.wikipedia.org/wiki/Mohammed_Shami">Mohammed Shami</a>
-            </div>
+                <div class="label">Mohammed Shami</div>
+                </a>
+                </div>
         </div>
     </main>
     <footer>
